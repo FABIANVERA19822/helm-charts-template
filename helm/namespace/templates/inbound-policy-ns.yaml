@@ -1,0 +1,21 @@
+{{- if .Values.inboundPolicyNorthSouth.enabled }}
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: {{ .Release.Name }}-northsouth-policy
+  namespace: {{ .Values.namespace }}
+spec:
+  podSelector:
+    matchLabels:
+      app.kubernetes.io/publisher: {{ .Values.inboundPolicyNorthSouth.publisher }}
+  policyTypes:
+  - Ingress
+  ingress:
+  - from: 
+    - namespaceSelector:
+        matchLabels:
+            kubernetes.io/metadata.name: kube-system
+    ports:
+    - port: {{ .Values.inboundPolicyNorthSouth.port }}
+      protocol: TCP
+{{- end }}
