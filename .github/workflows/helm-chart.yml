@@ -20,7 +20,7 @@ permissions:
 jobs:
   
   helm-chart-package:
-    runs-on: internal
+    runs-on: ubuntu-latest
     environment: ${{ inputs.Environment }}
 
     steps:
