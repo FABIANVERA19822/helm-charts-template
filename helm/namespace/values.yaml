@@ -1,0 +1,17 @@
+# Default values for app.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates. Update
+nameOverride: APPLICATION_NAME
+namespace: NAMESPACE
+
+inboundPolicyEastWest:
+  enabled: false
+  publisher: publisher-label
+  consumer: consumer-label
+  port: port
+
+inboundPolicyNorthSouth:
+  enabled: false
+  publisher: publisher-label
+  consumer: publisher-label
+  port: port
