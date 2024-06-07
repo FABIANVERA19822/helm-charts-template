@@ -42,15 +42,15 @@ jobs:
 
     - name: Application Helm chart - package
       run: |
-        helm package helm/application -d helm/application/charts/
+        helm package helm/app-template -d helm/app-template/charts/
       
     - name: Push Application template - ACR OCI artifacts
       run: |
-        helm push $(ls -t helm/application/charts/*.tgz | head -n1) oci://${{ vars.REGISTRY_NAME }}.azurecr.io/helm
+        helm push $(ls -t helm/app-template/charts/*.tgz | head -n1) oci://${{ vars.REGISTRY_NAME }}.azurecr.io/helm
 
     - name: Namespace Helm chart - package
       run: |
-        helm package helm/namespace -d helm/namespace/charts/
+        helm package helm/namespace-template -d helm/namespace-template/charts/
       
     - name: Push Namespace template - ACR OCI artifacts
       run: |
