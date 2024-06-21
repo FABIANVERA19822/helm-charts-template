@@ -7,7 +7,7 @@ metadata:
 spec:
   podSelector:
     matchLabels:
-      app.kubernetes.io/publisher: {{ .Values.inboundPolicyNorthSouth.publisher }}
+      app.kubernetes.io/publisher: {{ .Values.inboundPolicyNorthSouth.publisherLabel }}
   policyTypes:
   - Ingress
   ingress:

@@ -1,17 +1,19 @@
-# Default values for app.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates. Update
-nameOverride: APPLICATION_NAME
-namespace: NAMESPACE
-
-inboundPolicyEastWest:
-  enabled: false
-  publisher: publisher-label
-  consumer: consumer-label
-  port: port
-
-inboundPolicyNorthSouth:
-  enabled: false
-  publisher: publisher-label
-  consumer: publisher-label
-  port: port
+# Example of values.
+#projectname: PROJECT_NAME
+#namespace: NAMESPACE
+#
+#inboundPolicyEastWest:
+#  enabled: false
+# or
+#inboundPolicyEastWest:
+#  enabled: true
+#  NodeSubnetcidr: 10.224.0.0/16
+#
+#
+#inboundPolicyNorthSouth:
+#  enabled: false
+# or
+#inboundPolicyNorthSouth:
+#  enabled: true
+#  publisherLabel: NS-PROJECT_NAME
+#  port: 80
