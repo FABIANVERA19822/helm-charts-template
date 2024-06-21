@@ -42,7 +42,8 @@ jobs:
 
     - name: Application Helm chart - package
       run: |
-        helm package helm/app-template -d helm/app-template/charts/
+        cd helm/application
+        helm package . -d charts/
       
     - name: Push Application template - ACR OCI artifacts
       run: |
@@ -50,7 +51,8 @@ jobs:
 
     - name: Namespace Helm chart - package
       run: |
-        helm package helm/namespace-template -d helm/namespace-template/charts/
+        cd helm/namespace
+        helm package . -d charts/
       
     - name: Push Namespace template - ACR OCI artifacts
       run: |

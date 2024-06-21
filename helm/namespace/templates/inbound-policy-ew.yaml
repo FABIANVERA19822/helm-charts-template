@@ -12,5 +12,5 @@ spec:
   - from: 
     - podSelector: {}
     - ipBlock:
-        cidr: {{ .Values.NodesSubnet.cidr }}
+        cidr: {{ .Values.inboundPolicyEastWest.NodeSubnetcidr }}
 {{- end }}
